@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        .giveColour {
+            color: red;
+        }
+
+        .blueColour {
+            color: blue;
+        }
+
+        .is-loading {
+            background: red;
+        }
+
+        body {
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="newRoot">
+        <modal v-if="showModal" @close="showModal= false">
+            <p>We insert any text</p>
+        </modal>
+        <button @click="showModal = true">Show Modal</button>
+    </div>
+
+    <div id="root">
+        <div>
+            <tabs>
+                <tab name="About Us" :selected="true">
+                    <h1>The About Us Content</h1>
+                </tab>
+                <tab name="About Culture">
+                    <h1>The About Culture Content</h1>
+                </tab>
+                <tab name="About Vision">
+                    <h1>The About Vision Content</h1>
+                </tab>
+            </tabs>
+        </div>
+
+        <input type="text" id="input" v-model="message">
+        <p>The value of the input is: {{message}}</p>
+        <!-- the v-model binds the data to the element and the {{accesses the message value in our data model }}-->
+        <ul>
+            <li v-for="name in names" v-text="name"></li>
+        </ul>
+
+        <input type="text" v-model="newName">
+        <button v-on:click="addName">Add Name</button> <!-- v-on:clink or @click registers event listeners with Vue-->
+        <button v-bind:title="giveTitle">Hover over me</button> <!-- Use v-bind: or :  for attribte binding --->
+        <h1 :class="className">Hello Wolrd</h1>
+        <button :class="{'is-loading': isLoading}" @click="myToggleClass">Click Me</button>
+        <!-- Class binding with toggle property is-loading is the class with the red background, isLoading is the true or false propperty and myToggleClass controls the one time switch-->
+        <h1>{{reverseMessage}}</h1>
+
+        <h1>All Tasks</h1>
+        <ul>
+            <li v-for="task in tasks" v-text="task.description"></li>
+        </ul>
+        <h1>Completed Taks</h1>
+        <ul>
+            <li v-for="task in tasks" v-text="task.description" v-if="task.completed"></li>
+        </ul>
+        <h1>Incomplete Taks</h1>
+        <ul>
+            <li v-for="task in incompleteTasks" v-text="task.description"></li>
+        </ul>
+        <h1>Custom Elements</h1>
+        <div>
+            <task-list></task-list>
+        </div>
+
+        <div class="container">
+            <message title="Hello World" body="Lorem ipsum dolor amet"></message>
+        </div>
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> -->
+    <!-- - Which tag?? This last one is form Justin's link-->
+
+    <script>
+        //Directives, Property Binding, Interactivity, Methods, Computed Properties and Lifecycle hooks - Only things covered by CodeSpace
+
+        var app = new Vue({
+            el: '#root', // the id of the container
+            data: {
+                message: 'Hello World!', // connected to v-model in input element - the v-model binds the data to the element
+                //v-model is for form inputs alone
+
+                newName: '',
+                names: ['Joe', 'Mary', 'Jane', 'Jack'],
+                giveTitle: 'I wrote this!',
+                className: 'giveColour',
+                isLoading: false,
+                tasks: [
+                    { description: 'Go to the store', completed: true },
+                    { description: 'Finish screencast', completed: false },
+                    { description: 'Make donation', completed: false },
+                    { description: 'Clear inbox', completed: false },
+                    { description: 'Make dinner', completed: false },
+                    { description: 'Clean room', completed: true },
+                ]
+            },
+
+            methods: {
+                addName() {
+                    this.names.push(this.newName);
+                    this.newName = ''; //update input box display to empty string
+                },
+
+                myToggleClass() {
+                    this.isLoading = true;
+                }
+            },
+
+            computed: {
+                reverseMessage() {
+                    return this.message.split('').reverse().join('');
+                },
+
+                incompleteTasks() {
+                    return this.tasks.filter(task => !task.completed)
+                }
+            }
+        })
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
