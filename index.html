@@ -8,6 +8,9 @@
     <title>Netflix Clone</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- cdn Link -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="src/js/landing.js" defer></script>
     <style>
         .giveColour {
             color: red;
@@ -61,7 +64,7 @@
             </div>
         </div>
     </div>
-    <main class="forVue">
+    <main>
         <header>
             <div class="nav" id="nav">
                 <img src="images/netflix-logo.png" alt="" class="nav__logo" />
@@ -81,7 +84,7 @@
             </nav>
         </header>
 
-        <div class="home" id="root">
+        <div class="home">
             <div class="feature-card">
                 <!-- header -->
                 <div class="banner">
@@ -104,101 +107,78 @@
                     <div class="banner__fadeBottom"></div>
                 </div>
             </div>
-            <form @submit.prevent="SearchMovies()" class="search-box">
-                <input type="text" placeholder="What are you looking for?" v-model="search" />
-                <input type="submit" value="Search" @click="onChange($event)" />
-            </form>
-            <div class="radio-toolbar">
-                <input type="radio" id="radioSmall" name="radioSizes" value="S" @change="onChange($event)" checked>
-                <label for="radioSmall">S</label>
 
-                <input type="radio" id="radioMeduim" name="radioSizes" value="M" @change="onChange($event)">
-                <label for="radioMeduim">M</label>
-
-                <input type="radio" id="radioLarge" name="radioSizes" value="L" @change="onChange($event)">
-                <label for="radioLarge">L</label>
-
-                <input type="radio" id="radioXLarge" name="radioSizes" value="XL" @change="onChange($event)">
-                <label for="radioXLarge">XL</label>
+            <div>
+                <form @submit.prevent="SearchMovies()" class="search-box">
+                    <input type="text" placeholder="What are you looking for?" v-model="search" />
+                    <input type="submit" value="Search" @click="onChange($event)" />
+                </form>
             </div>
 
-            <div class="movies-list">
-                <div class="movie row__poster" v-for="movie in movies" :key="movie.imdbID">
-                    <router-link :to="'/movie/' + movie.imdbID" class="movie-link">
-                        <div class="product-image">
-                            <img :src="movie.Poster" alt="Movie Poster" />
-                            <div class="type">{{ movie.Type }}</div>
-                        </div>
-                        <div class="detail">
-                            <p class="year">{{ movie.Year }}</p>
-                            <h3>{{ movie.Title }}</h3>
-                            <button class="addToWatch">Add</button>
-                            <button type="button" class="myButton addToCartButton" @click="increment">Add To
-                                List</button>
-                        </div>
-                    </router-link>
-                </div>
-            </div>
-            <div id="newRoot">
-                <modal v-if="showModal" @close="showModal= false">
-                    <p>We insert any text</p>
-                </modal>
-                <button @click="showModal = true">Show Modal</button>
-            </div>
+            <div id="app-landing">
 
-            <div id="root">
-                <div>
-                    <tabs>
-                        <tab name="About Us" :selected="true">
-                            <h1>The About Us Content</h1>
-                        </tab>
-                        <tab name="About Culture">
-                            <h1>The About Culture Content</h1>
-                        </tab>
-                        <tab name="About Vision">
-                            <h1>The About Vision Content</h1>
-                        </tab>
-                    </tabs>
+                <h1> Vue Racing League</h1>
+                <h2>
+                    The home of good racing
+                </h2>
+
+                <hr>
+
+                <!-- greeting popup -->
+                <div v-show="!greeted">
+                    <h2>
+                        Greetings Prospective Racers!
+                    </h2>
+
+                    <p>
+                        {{greetingMessage}}
+                        <br>
+                        <br>
+                        {{helpMessage}}
+                    </p>
+
                 </div>
 
-                <input type="text" id="input" v-model="message">
-                <p>The value of the input is: {{message}}</p>
-                <!-- the v-model binds the data to the element and the {{accesses the message value in our data model }}-->
-                <ul>
-                    <li v-for="name in names" v-text="name"></li>
-                </ul>
+                <!-- form to create drivers -->
+                <div v-show="greeted">
 
-                <input type="text" v-model="newName">
-                <button v-on:click="addName">Add Name</button>
-                <!-- v-on:clink or @click registers event listeners with Vue-->
-                <button v-bind:title="giveTitle">Hover over me</button> <!-- Use v-bind: or :  for attribte binding --->
-                <h1 :class="className">Hello Wolrd</h1>
-                <button :class="{'is-loading': isLoading}" @click="myToggleClass">Click Me</button>
-                <!-- Class binding with toggle property is-loading is the class with the red background, isLoading is the true or false propperty and myToggleClass controls the one time switch-->
-                <h1>{{reverseMessage}}</h1>
+                    <h2>Register a driver to the standings</h2>
+                    <form action="src/pages/standings.html" id="register-driver-form" class="display">
+                        <input v-model="newDriver.name" type="text" placeholder="driver name" required>
+                        <input v-model="newDriver.age" type="number" placeholder="driver age" required>
+                        <input v-model="newDriver.team" type="text" placeholder="enter team name" required>
+                        <input v-model="newDriver.nationality" type="text" placeholder="nationality" required>
+                        <select v-model="newDriver.league">
+                            <option value="" disabled selected>Select your League</option>
+                            <option value="Carting">Carting</option>
+                            <option value="N400">N400</option>
+                            <option value="GT3">GT3</option>
+                        </select>
+                        <input v-model="newDriver.carColor" type="text" placeholder="car colour" required>
+                        <input v-model="newDriver.number" type="number" placeholder="driver number" required>
+                        <button v-on:click="createNewDriver">
+                            Register
+                        </button>
+                    </form>
 
-                <h1>All Tasks</h1>
-                <ul>
-                    <li v-for="task in tasks" v-text="task.description"></li>
-                </ul>
-                <h1>Completed Taks</h1>
-                <ul>
-                    <li v-for="task in tasks" v-text="task.description" v-if="task.completed"></li>
-                </ul>
-                <h1>Incomplete Taks</h1>
-                <ul>
-                    <li v-for="task in incompleteTasks" v-text="task.description"></li>
-                </ul>
-                <h1>Custom Elements</h1>
-                <div>
-                    <task-list></task-list>
                 </div>
 
-                <div class="container">
-                    <message title="Hello World" body="Lorem ipsum dolor amet"></message>
-                </div>
+                <br>
+                <hr>
+                <br>
+
+                <a href="src/pages/standings.html">
+                    <button>
+                        View Standings
+                    </button>
+                </a>
+                <button v-on:click="greet">
+                    Register Driver
+                </button>
 
             </div>
+
+
             <!-- Netflix Originals -->
             <div class="row">
                 <h2>NETFLIX ORIGINALS</h2>
@@ -395,8 +375,8 @@
             }
         });
     </script>
-    <script type="module" src="js/main.js"></script>
-    <script type="module" src="js/experiment.js"></script>
+    <!--<script type="module" src="js/main.js"></script>
+    <script type="module" src="js/experiment.js"></script>-->
     <script type="application/javascript" src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>-->
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -421,53 +401,6 @@
     <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> -->
     <!-- - Which tag?? This last one is form Justin's link-->
-
-    <script>
-        //Directives, Property Binding, Interactivity, Methods, Computed Properties and Lifecycle hooks - Only things covered by CodeSpace
-
-        var app = new Vue({
-            el: '#root', // the id of the container
-            data: {
-                message: 'Hello World!', // connected to v-model in input element - the v-model binds the data to the element
-                //v-model is for form inputs alone
-
-                newName: '',
-                names: ['Joe', 'Mary', 'Jane', 'Jack'],
-                giveTitle: 'I wrote this!',
-                className: 'giveColour',
-                isLoading: false,
-                tasks: [
-                    { description: 'Go to the store', completed: true },
-                    { description: 'Finish screencast', completed: false },
-                    { description: 'Make donation', completed: false },
-                    { description: 'Clear inbox', completed: false },
-                    { description: 'Make dinner', completed: false },
-                    { description: 'Clean room', completed: true },
-                ]
-            },
-
-            methods: {
-                addName() {
-                    this.names.push(this.newName);
-                    this.newName = ''; //update input box display to empty string
-                },
-
-                myToggleClass() {
-                    this.isLoading = true;
-                }
-            },
-
-            computed: {
-                reverseMessage() {
-                    return this.message.split('').reverse().join('');
-                },
-
-                incompleteTasks() {
-                    return this.tasks.filter(task => !task.completed)
-                }
-            }
-        })
-    </script>
 
 </body>
 
