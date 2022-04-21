@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRL - Standings</title>
+    <!-- cdn Link -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="../js/standings.js" defer></script>
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+
+<body>
+
+
+    <div id="app-standings">
+
+        <h2>
+            Greetings Prospective Racers!
+        </h2>
+
+        <br>
+        <hr>
+        <br>
+
+        <div>
+            <div v-for="driver in registeredDrivers" class="standing-display">
+                <span>{{driver.name}}</span>
+                <span>{{driver.age}}</span>
+                <span>{{driver.team}}</span>
+                <span>{{driver.nationality}}</span>
+                <span>{{driver.league}}</span>
+                <span>{{driver.carColor}}</span>
+                <span>{{driver.number}}</span>
+                <span>{{driver.points}}</span>
+            </div>
+        </div>
+        
+        <br>
+        <hr>
+        <br>
+
+        <a href="../../index.html">
+            <button>
+                Home
+            </button>
+        </a>
+
+    </div>
+
+
+</body>
+
+</html>

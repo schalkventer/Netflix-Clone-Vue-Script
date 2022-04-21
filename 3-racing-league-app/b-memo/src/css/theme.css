@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 30vw;
+}
+
+.display > input, select, button {
+    padding: 1.25rem;
+}
+
+.standing-display {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}

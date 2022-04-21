@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Racing League</title>
+    <!-- cdn Link -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./src/js/landing.js" defer></script>
+    <link rel="stylesheet" href="./src/css/theme.css">
+</head>
+
+<body>
+
+    <div id="app-landing">
+
+        <h1> Vue Racing League</h1>
+        <h2>
+            The home of good racing
+        </h2>
+
+        <hr>
+
+        <!-- greeting popup -->
+        <div v-show="!greeted">
+            <h2>
+                Greetings Prospective Racers!
+            </h2>
+
+            <p>
+                {{greetingMessage}}
+                 <br>
+                 <br>
+                {{helpMessage}}
+            </p>
+
+        </div>
+
+        <!-- form to create drivers -->
+        <div v-show="greeted">
+            
+            <h2>Register a driver to the standings</h2>
+            <form action="./src/pages/standings.html" id="register-driver-form" class="display">
+                <input v-model="newDriver.name" type="text" placeholder="driver name" required>
+                <input v-model="newDriver.age" type="number" placeholder="driver age" required>
+                <input v-model="newDriver.team" type="text" placeholder="enter team name" required>
+                <input v-model="newDriver.nationality" type="text" placeholder="nationality" required>
+                <select v-model="newDriver.league">
+                    <option value="" disabled selected>Select your League</option>
+                    <option value="Carting">Carting</option>
+                    <option value="N400">N400</option>
+                    <option value="GT3">GT3</option>    
+                </select>
+                <input v-model="newDriver.carColor" type="text" placeholder="car colour" required>
+                <input v-model="newDriver.number" type="number" placeholder="driver number" required>
+                <button v-on:click="createNewDriver">
+                    Register
+                </button>
+            </form>
+
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <a href="./src/pages/standings.html">
+            <button>
+                View Standings
+            </button>
+        </a>
+        <button v-on:click="greet">
+            Register Driver
+        </button>
+
+    </div>
+
+
+</body>
+
+</html>
