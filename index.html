@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix Clone</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="src/css/styles.css">
     <!-- cdn Link -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="src/js/landing.js" defer></script>
@@ -36,52 +35,17 @@
 </head>
 
 <body>
-
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true" role="document">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Cart</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <table class="myCartTable">
-
-                        <tbody class="cartInputContainer task-list">
-                            <tr id="tasks">
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                        </tfoot>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="myButton" data-bs-dismiss="modal">Close</button>
-                    <a href="checkOut.html"><button type="button" class="myButton">Check Out</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <main>
+    <div id="app-landing">
         <header>
             <div class="nav" id="nav">
-                <img src="images/netflix-logo.png" alt="" class="nav__logo" />
-                <img src="images/netflix-avatar.png" alt="" class="nav__avatar" />
+                <img src="/src/images/netflix-logo.png" alt="" class="nav__logo" />
+                <a href="src/pages/MovieDetail.html">
+                    <button class="nav__watchList">
+                        Watchlist
+                    </button>
+                    <img src="/src/images/netflix-avatar.png" alt="" class="nav__avatar" />
+                </a>
             </div>
-            <!-- Nav -->
-            <nav class="navbar navbar-inverse bg-inverse bg-faded">
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="myButton" @click="displayCart" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
-                            Watch List ( {{count}} )
-                        </button>
-                        <button class="myButton" id="clearCart" @click="decrement">Clear Cart</button>
-                    </div>
-                </div>
-            </nav>
         </header>
 
         <div class="home">
@@ -115,255 +79,241 @@
                 </form>
             </div>
 
-            <div id="app-landing">
 
-                <h1> Vue Racing League</h1>
+            <!-- greeting popup -->
+            <div v-show="!greeted">
                 <h2>
-                    The home of good racing
+                    Greetings Prospective Racers!
                 </h2>
 
-                <hr>
+                <p>
+                    {{greetingMessage}}
+                    <br>
+                    <br>
+                    {{helpMessage}}
+                </p>
 
-                <!-- greeting popup -->
-                <div v-show="!greeted">
-                    <h2>
-                        Greetings Prospective Racers!
-                    </h2>
+            </div>
 
-                    <p>
-                        {{greetingMessage}}
-                        <br>
-                        <br>
-                        {{helpMessage}}
-                    </p>
-
-                </div>
-
-                <!-- form to create drivers -->
-                <div v-show="greeted">
-
-                    <h2>Register a driver to the standings</h2>
-                    <form action="src/pages/standings.html" id="register-driver-form" class="display">
-                        <input v-model="newDriver.name" type="text" placeholder="driver name" required>
-                        <input v-model="newDriver.age" type="number" placeholder="driver age" required>
-                        <input v-model="newDriver.team" type="text" placeholder="enter team name" required>
-                        <input v-model="newDriver.nationality" type="text" placeholder="nationality" required>
-                        <select v-model="newDriver.league">
-                            <option value="" disabled selected>Select your League</option>
-                            <option value="Carting">Carting</option>
-                            <option value="N400">N400</option>
-                            <option value="GT3">GT3</option>
-                        </select>
-                        <input v-model="newDriver.carColor" type="text" placeholder="car colour" required>
-                        <input v-model="newDriver.number" type="number" placeholder="driver number" required>
-                        <button v-on:click="createNewDriver">
-                            Register
-                        </button>
-                    </form>
-
-                </div>
-
-                <br>
-                <hr>
-                <br>
-
-                <a href="src/pages/standings.html">
-                    <button>
-                        View Standings
+            <!-- form to create drivers -->
+            <div v-show="greeted">
+                <h2>Input Movie Details to Create New Movie</h2>
+                <form action="src/pages/standings.html" id="register-driver-form" class="display">
+                    <input v-model="movie.Title" type="text" placeholder="movie title" required>
+                    <input v-model="movie.Description" type="text" placeholder="movie desc" required>
+                    <input v-model="movie.CommingSoon" type="text" placeholder="nationality" required>
+                    <select v-model="movie.Reminder">
+                        <option value="" disabled selected>Select your League</option>
+                        <option value="Carting">Carting</option>
+                        <option value="N400">N400</option>
+                        <option value="GT3">GT3</option>
+                    </select>
+                    <input v-model="movie.ReleaseDate" type="text" placeholder="car colour" required>
+                    <input v-model="movie.Genre" type="number" placeholder="driver number" required>
+                    <input v-model="movie.Actors" type="number" placeholder="driver number" required>
+                    <button v-on:click="createNewDriver">
+                        Create Movie
                     </button>
-                </a>
-                <button v-on:click="greet">
-                    Register Driver
-                </button>
+                </form>
 
             </div>
 
+            <br>
+            <hr>
+            <br>
 
-            <!-- Netflix Originals -->
-            <div class="row">
-                <h2>NETFLIX ORIGINALS</h2>
-                <div class="row__posters">
-                    <img src="images/large-movie1.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie2.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie3.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie4.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie5.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie6.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie7.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie8.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie1.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie2.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie3.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie4.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie5.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie6.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie7.jpg" alt="" class="row__poster row__posterLarge" />
-                    <img src="images/large-movie8.jpg" alt="" class="row__poster row__posterLarge" />
-                </div>
-            </div>
 
-            <!-- Trending Now -->
-            <div class="row">
-                <h2>Trending Now</h2>
-                <div class="row__posters">
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                </div>
-            </div>
+            <button v-on:click="greet">
+                Register Driver
+            </button>
 
-            <!-- Top Rated -->
-            <div class="row">
-                <h2>Top Rated</h2>
-                <div class="row__posters">
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                </div>
-            </div>
+        </div>
 
-            <!-- Action Movies -->
-            <div class="row">
-                <h2>Action Movies</h2>
-                <div class="row__posters">
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                </div>
-            </div>
 
-            <!-- Comedy Movies -->
-            <div class="row">
-                <h2>Comedy Movies</h2>
-                <div class="row__posters">
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                </div>
-            </div>
-
-            <!-- Horror Movies -->
-            <div class="row">
-                <h2>Horror Movies</h2>
-                <div class="row__posters">
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                </div>
-            </div>
-
-            <!-- Romance Movies -->
-            <div class="row">
-                <h2>Romance Movies</h2>
-                <div class="row__posters">
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                </div>
-            </div>
-
-            <!-- Documentaries -->
-            <div class="row">
-                <h2>Documentaries</h2>
-                <div class="row__posters">
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie1.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie2.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie3.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie4.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie5.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie6.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie7.jpg" alt="" class="row__poster" />
-                    <img src="images/small-movie8.jpg" alt="" class="row__poster" />
-                </div>
+        <!-- Netflix Originals -->
+        <div class="row">
+            <h2>COMING SOON</h2>
+            <div class="row__posters">
+                <img src="/src/images/large-movie1.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie2.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie3.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie4.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie5.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie6.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie7.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie8.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie1.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie2.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie3.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie4.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie5.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie6.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie7.jpg" alt="" class="row__poster row__posterLarge" />
+                <img src="/src/images/large-movie8.jpg" alt="" class="row__poster row__posterLarge" />
             </div>
         </div>
-    </main>
+
+        <!-- Trending Now -->
+        <div class="row">
+            <h2>Trending Now</h2>
+            <div class="row__posters">
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            </div>
+        </div>
+
+        <!-- Top Rated -->
+        <div class="row">
+            <h2>Top Rated</h2>
+            <div class="row__posters">
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            </div>
+        </div>
+
+        <!-- Action Movies -->
+        <div class="row">
+            <h2>Action Movies</h2>
+            <div class="row__posters">
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            </div>
+        </div>
+
+        <!-- Comedy Movies -->
+        <div class="row">
+            <h2>Comedy Movies</h2>
+            <div class="row__posters">
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            </div>
+        </div>
+
+        <!-- Horror Movies -->
+        <div class="row">
+            <h2>Horror Movies</h2>
+            <div class="row__posters">
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            </div>
+        </div>
+
+        <!-- Romance Movies -->
+        <div class="row">
+            <h2>Romance Movies</h2>
+            <div class="row__posters">
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            </div>
+        </div>
+
+        <!-- Documentaries -->
+        <div class="row">
+            <h2>Documentaries</h2>
+            <div class="row__posters">
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
+                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            </div>
+        </div>
+    </div>
     <script type="text/javascript">
         const nav = document.getElementById("nav");
 

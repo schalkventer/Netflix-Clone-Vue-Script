@@ -1,11 +1,11 @@
 const standings = new Vue({
 
-    el : '#app-standings',
-    
-    data : {
-        test : 'hello',
+    el: '#app-standings',
 
-        registeredDrivers : []
+    data: {
+        test: 'hello',
+
+        watchList: []
     },
 
     mounted() {
@@ -15,8 +15,8 @@ const standings = new Vue({
             let initArray = []
             localStorage.setItem("vrl-app-key", JSON.stringify(initArray))
         }
-        
-        this.registeredDrivers = JSON.parse(localStorage.getItem("vrl-app-key"))
+
+        this.watchList = JSON.parse(localStorage.getItem("vrl-app-key"))
     }
-    
+
 })
