@@ -10,28 +10,6 @@
     <!-- cdn Link -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="src/js/landing.js" defer></script>
-    <style>
-        .giveColour {
-            color: red;
-        }
-
-        .blueColour {
-            color: blue;
-        }
-
-        .is-loading {
-            background: red;
-        }
-
-        body {
-            padding-top: 20px;
-            padding-left: 20px;
-        }
-
-        h1 {
-            font-size: 40px;
-        }
-    </style>
 </head>
 
 <body>
@@ -79,6 +57,7 @@
                 </form>
             </div>
 
+<<<<<<< Updated upstream
 
             <!-- greeting popup -->
             <div v-show="!greeted">
@@ -92,6 +71,13 @@
                     <br>
                     {{helpMessage}}
                 </p>
+=======
+            <div id="app-landing">
+                <div v-show="!greeted">
+                    <h2>
+                        Greetings Prospective Racers!
+                    </h2>
+>>>>>>> Stashed changes
 
             </div>
 
@@ -123,9 +109,20 @@
             <br>
 
 
+<<<<<<< Updated upstream
             <button v-on:click="greet">
                 Register Driver
             </button>
+=======
+                <a href="src/pages/standings.html">
+                    <button>
+                        Watch List
+                    </button>
+                </a>
+                <button v-on:click="greet">
+                    Register Driver
+                </button>
+>>>>>>> Stashed changes
 
         </div>
 

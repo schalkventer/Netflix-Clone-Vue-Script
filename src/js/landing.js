@@ -21,6 +21,7 @@ const landing = new Vue({
             + "where drivers from different teams compete in a circuit race. For more information or help please contact "
             + "the organisers or your team managers.",
 
+<<<<<<< Updated upstream
         movie: {
             // id : '#' + Math.floor(Math.random() * 9000) + 1000,
             Title: "",
@@ -31,6 +32,18 @@ const landing = new Vue({
             ReleaseDate: "",
             Genre: "",
             Actors: "",
+=======
+        newDriver: {
+            // id : '#' + Math.floor(Math.random() * 9000) + 1000,
+            name: "",
+            age: "",
+            team: "",
+            nationality: "",
+            league: "",
+            carColor: "",
+            number: '',
+            points: 0
+>>>>>>> Stashed changes
         }
     },
 
@@ -43,16 +56,31 @@ const landing = new Vue({
 
         createNewDriver() {
 
+<<<<<<< Updated upstream
+=======
+            //Only need to use local storge for Watchlist? Will have to check LMS...
+            if (!localStorage.getItem("vrl-app-key")) {
+>>>>>>> Stashed changes
 
             if (!localStorage.getItem("vrl-app-key")) {
 
                 let watchList = []
                 watchList.push(this.movie)
 
+<<<<<<< Updated upstream
                 localStorage.setItem("vrl-app-key", JSON.stringify(watchList))
                 console.log('not working')
 
             } else {
+=======
+                localStorage.setItem("vrl-app-key", JSON.stringify(driversList))
+                alert('not working')
+
+            } else {
+
+                let driversList = JSON.parse(localStorage.getItem("vrl-app-key"))
+                console.log(driversList)
+>>>>>>> Stashed changes
 
                 let watchList = JSON.parse(localStorage.getItem("vrl-app-key"))
                 console.log(watchList)
