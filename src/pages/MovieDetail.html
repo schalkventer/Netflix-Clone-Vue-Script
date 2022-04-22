@@ -34,11 +34,13 @@
             <div v-for="wMovie in watchList" class="movie-detail">
 
                 <h2>{{wMovie.Title}}</h2>
+                <img alt="Movie Poster" class="featured-img" src="wMovie.Poster">
                 <!--<img :src="movie.Poster" alt="Movie Poster" class="featured-img" />-->
                 <h4>Genre</h4>
                 <span>{{wMovie.Genre}}</span>
-                <h4>Release Date:</h4>
-                <span>{{wMovie.ReleaseDate}}</span>
+                <p>Release Date:
+                <p>
+                    <span>{{wMovie.ReleaseDate}}</span>
                 <h3>Description</h3>
                 <p>{{wMovie.Description}}</p>
                 <h4>Actors</h4>

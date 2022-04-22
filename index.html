@@ -33,9 +33,9 @@
                     <div class="banner__contents">
                         <h3 class="banner__title">Money Heist</h3>
                         <div class="banner__buttons">
-                            <router-link to="/movie/tt049591">
-                                <button class="banner__button">Play</button>
-                            </router-link>
+
+                            <button class="banner__button">Play</button>
+
                             <button class="banner__button">My List</button>
                         </div>
                         <th style="direction: ltr; padding-top:2em;text-align: center; padding-right:0"
@@ -51,263 +51,175 @@
             </div>
 
             <div>
-                <form @submit.prevent="SearchMovies()" class="search-box">
-                    <input type="text" placeholder="What are you looking for?" v-model="search" />
-                    <input type="submit" value="Search" @click="onChange($event)" />
+                <form id="register-driver-form" class="search-box">
+                    <input v-model="searchInput.searchText" type="text" placeholder="What are you looking for?"
+                        required>
+                    <input type="button" value="Search" v-on:click="theSearch" />
                 </form>
             </div>
 
-<<<<<<< Updated upstream
-
-            <!-- greeting popup -->
-            <div v-show="!greeted">
-                <h2>
-                    Greetings Prospective Racers!
-                </h2>
-
-                <p>
-                    {{greetingMessage}}
-                    <br>
-                    <br>
-                    {{helpMessage}}
-                </p>
-=======
-            <div id="app-landing">
-                <div v-show="!greeted">
-                    <h2>
-                        Greetings Prospective Racers!
-                    </h2>
->>>>>>> Stashed changes
-
+            <div v-show="!searched" class="movies-list">
+                <span></span>
             </div>
 
             <!-- form to create drivers -->
-            <div v-show="greeted">
-                <h2>Input Movie Details to Create New Movie</h2>
-                <form action="src/pages/standings.html" id="register-driver-form" class="display">
-                    <input v-model="movie.Title" type="text" placeholder="movie title" required>
-                    <input v-model="movie.Description" type="text" placeholder="movie desc" required>
-                    <input v-model="movie.CommingSoon" type="text" placeholder="nationality" required>
-                    <select v-model="movie.Reminder">
-                        <option value="" disabled selected>Select your League</option>
-                        <option value="Carting">Carting</option>
-                        <option value="N400">N400</option>
-                        <option value="GT3">GT3</option>
-                    </select>
-                    <input v-model="movie.ReleaseDate" type="text" placeholder="car colour" required>
-                    <input v-model="movie.Genre" type="number" placeholder="driver number" required>
-                    <input v-model="movie.Actors" type="number" placeholder="driver number" required>
-                    <button v-on:click="createNewDriver">
-                        Create Movie
-                    </button>
-                </form>
-
+            <div v-show="searched" class="movies-list">
+                <div v-for="wMovie in movies" class="movie row__poster">
+                    <div class="product-image">
+                        <img :src="wMovie.Poster" alt="Movie Poster">
+                        <div class="type">{{ wMovie.Genre }}</div>
+                    </div>
+                    <div class="detail">
+                        <p class="year">{{wMovie.ReleaseDate}}</p>
+                        <h3>{{ wMovie.Title }}</h3>
+                        <button v-on:click="addToWatchList">Add</button>
+                    </div>
+                </div>
             </div>
-
-            <br>
-            <hr>
-            <br>
-
-
-<<<<<<< Updated upstream
-            <button v-on:click="greet">
-                Register Driver
-            </button>
-=======
-                <a href="src/pages/standings.html">
-                    <button>
-                        Watch List
-                    </button>
-                </a>
-                <button v-on:click="greet">
-                    Register Driver
-                </button>
->>>>>>> Stashed changes
-
         </div>
 
 
         <!-- Netflix Originals -->
         <div class="row">
             <h2>COMING SOON</h2>
-            <div class="row__posters">
-                <img src="/src/images/large-movie1.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie2.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie3.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie4.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie5.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie6.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie7.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie8.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie1.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie2.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie3.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie4.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie5.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie6.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie7.jpg" alt="" class="row__poster row__posterLarge" />
-                <img src="/src/images/large-movie8.jpg" alt="" class="row__poster row__posterLarge" />
+            <div class="movies-list row__posters">
+                <div v-for="wMovie in movies" class="movie row__poster row__posterLarge">
+                    <div class="product-image">
+                        <img :src="wMovie.Poster" alt="Movie Poster">
+                        <div class="type">{{ wMovie.Genre }}</div>
+                    </div>
+                    <div class="detail">
+                        <p class="year">{{wMovie.ReleaseDate}}</p>
+                        <h3>{{ wMovie.Title }}</h3>
+                        <button v-on:click="addToWatchList">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Trending Now -->
         <div class="row">
             <h2>Trending Now</h2>
-            <div class="row__posters">
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            <div class="movies-list row__posters">
+                <div v-for="wMovie in movies" class="movie row__poster">
+                    <div class="product-image">
+                        <img :src="wMovie.Poster" alt="Movie Poster">
+                        <div class="type">{{ wMovie.Genre }}</div>
+                    </div>
+                    <div class="detail">
+                        <p class="year">{{wMovie.ReleaseDate}}</p>
+                        <h3>{{ wMovie.Title }}</h3>
+                        <button v-on:click="addToWatchList">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Top Rated -->
         <div class="row">
             <h2>Top Rated</h2>
-            <div class="row__posters">
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            <div class="movies-list row__posters">
+                <div v-for="wMovie in movies" class="movie row__poster">
+                    <div class="product-image">
+                        <img :src="wMovie.Poster" alt="Movie Poster">
+                        <div class="type">{{ wMovie.Genre }}</div>
+                    </div>
+                    <div class="detail">
+                        <p class="year">{{wMovie.ReleaseDate}}</p>
+                        <h3>{{ wMovie.Title }}</h3>
+                        <button v-on:click="addToWatchList">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Action Movies -->
         <div class="row">
             <h2>Action Movies</h2>
-            <div class="row__posters">
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            <div class="movies-list row__posters">
+                <div v-for="wMovie in movies" class="movie row__poster">
+                    <div class="product-image">
+                        <img :src="wMovie.Poster" alt="Movie Poster">
+                        <div class="type">{{ wMovie.Genre }}</div>
+                    </div>
+                    <div class="detail">
+                        <p class="year">{{wMovie.ReleaseDate}}</p>
+                        <h3>{{ wMovie.Title }}</h3>
+                        <button v-on:click="addToWatchList">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Comedy Movies -->
         <div class="row">
             <h2>Comedy Movies</h2>
-            <div class="row__posters">
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            <div class="movies-list row__posters">
+                <div v-for="wMovie in movies" class="movie row__poster">
+                    <div class="product-image">
+                        <img :src="wMovie.Poster" alt="Movie Poster">
+                        <div class="type">{{ wMovie.Genre }}</div>
+                    </div>
+                    <div class="detail">
+                        <p class="year">{{wMovie.ReleaseDate}}</p>
+                        <h3>{{ wMovie.Title }}</h3>
+                        <button v-on:click="addToWatchList">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Horror Movies -->
         <div class="row">
             <h2>Horror Movies</h2>
-            <div class="row__posters">
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            <div class="movies-list row__posters">
+                <div v-for="wMovie in movies" class="movie row__poster">
+                    <div class="product-image">
+                        <img :src="wMovie.Poster" alt="Movie Poster">
+                        <div class="type">{{ wMovie.Genre }}</div>
+                    </div>
+                    <div class="detail">
+                        <p class="year">{{wMovie.ReleaseDate}}</p>
+                        <h3>{{ wMovie.Title }}</h3>
+                        <button v-on:click="addToWatchList">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Romance Movies -->
         <div class="row">
             <h2>Romance Movies</h2>
-            <div class="row__posters">
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            <div class="movies-list row__posters">
+                <div v-for="wMovie in movies" class="movie row__poster">
+                    <div class="product-image">
+                        <img :src="wMovie.Poster" alt="Movie Poster">
+                        <div class="type">{{ wMovie.Genre }}</div>
+                    </div>
+                    <div class="detail">
+                        <p class="year">{{wMovie.ReleaseDate}}</p>
+                        <h3>{{ wMovie.Title }}</h3>
+                        <button v-on:click="addToWatchList">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Documentaries -->
         <div class="row">
             <h2>Documentaries</h2>
-            <div class="row__posters">
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie1.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie2.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie3.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie4.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie5.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie6.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie7.jpg" alt="" class="row__poster" />
-                <img src="/src/images/small-movie8.jpg" alt="" class="row__poster" />
+            <div class="movies-list row__posters">
+                <div v-for="wMovie in movies" class="movie row__poster">
+                    <div class="product-image">
+                        <img :src="wMovie.Poster" alt="Movie Poster">
+                        <div class="type">{{ wMovie.Genre }}</div>
+                    </div>
+                    <div class="detail">
+                        <p class="year">{{wMovie.ReleaseDate}}</p>
+                        <h3>{{ wMovie.Title }}</h3>
+                        <button v-on:click="addToWatchList">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

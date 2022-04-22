@@ -79,7 +79,7 @@ a::selection {
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-.home .search-box input[type="submit"], button {
+.home .search-box input[type="button"], button {
     width: 100%;
     max-width: 300px;
     background-color: #42b883;
@@ -91,7 +91,7 @@ a::selection {
     transition: 0.4s;
 }
 
-.home .search-box input[type="submit"]:active, button:active {
+.home .search-box input[type="button"]:active, button:active {
     background-color: #3b8070;
 }
 
@@ -197,9 +197,13 @@ body {
 .row__poster {
     width: 100%;
     object-fit: contain;
-    max-height: 100px;
+    max-height: 20vw;
     margin-right: 10px;
     transition: transform 450ms;
+}
+
+.row__poster img {
+    height: 20vw;
 }
 
 .row__posters {
@@ -218,7 +222,11 @@ body {
 }
 
 .row__posterLarge {
-    max-height: 250px;
+    max-height: 25vw;
+}
+
+.row__posterLarge img {
+    height: 25vw;
 }
 
 .row__posterLarge:hover {
