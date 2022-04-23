@@ -13,7 +13,6 @@ const landing = new Vue({
 
         movies: [
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Charlie and the Chocolate Factory",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNjcxMjg1Njg2NF5BMl5BanBnXkFtZTcwMjQ4NzMzMw@@._V1_SX300.jpg",
                 Description:
@@ -30,7 +29,6 @@ const landing = new Vue({
             },
 
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Cruella",
                 Poster: "https://m.media-amazon.com/images/M/MV5BOWI5YTUxOWEtZmRiZS00ZmQxLWE2NzctYTRiODA2NzE1ZjczXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
                 Description:
@@ -48,7 +46,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Interstellar",
                 Poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
                 Description:
@@ -62,7 +59,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Sunshine",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTU5Nzg2OTk2NF5BMl5BanBnXkFtZTYwNTc1ODM3._V1_SX300.jpg",
                 Description:
@@ -76,7 +72,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "James and the Giant Peach",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTNkNWIwNGUtNTJlOC00NDU3LTk0NWEtNjNjNDM4NzRiNThkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
                 Description:
@@ -92,7 +87,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Chicken Run",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNDgxNjZlZDYtZGJmZC00Mjg0LWEwYzctYWQ0MWFjNTM3ZmM4XkEyXkFqcGdeQXVyNTM5NzI0NDY@._V1_SX300.jpg",
                 Description:
@@ -106,7 +100,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "A.I. Artificial Intelligence",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNWU2NzEyMDYtM2MyOS00OGM3LWFkNzAtMzRiNzE2ZjU5ZTljXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
                 Description:
@@ -124,7 +117,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Grave of the Fireflies",
                 Poster: "https://m.media-amazon.com/images/M/MV5BZmY2NjUzNDQtNTgxNC00M2Q4LTljOWQtMjNjNDBjNWUxNmJlXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
                 Description:
@@ -138,7 +130,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "The Gods Must Be Crazy",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMzVhZDE2N2UtMjEyZi00ODkyLWJhMTctM2NhZWNkNGE4NWYyXkEyXkFqcGdeQXVyMzg1ODEwNQ@@._V1_SX300.jpg",
                 Description:
@@ -153,7 +144,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Ant-Man",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_SX300.jpg",
                 Description:
@@ -168,7 +158,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Uncharted",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMWEwNjhkYzYtNjgzYy00YTY2LThjYWYtYzViMGJkZTI4Y2MyXkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_SX300.jpg",
                 Description:
@@ -185,7 +174,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Red Notice",
                 Poster: "https://m.media-amazon.com/images/M/MV5BZmRjODgyMzEtMzIxYS00OWY2LTk4YjUtMGMzZjMzMTZiN2Q0XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
                 Description:
@@ -202,7 +190,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Wonder Woman",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTYzODQzYjQtNTczNC00MzZhLTg1ZWYtZDUxYmQ3ZTY4NzA1XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
                 Description:
@@ -217,7 +204,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Honey, I Shrunk the Kids",
                 Poster: "https://m.media-amazon.com/images/M/MV5BOTQ1NTg4MDAtOGU0OS00ZGQwLTliZjQtNDEzZjAzZGI5MjFjXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_SX300.jpg",
                 Description:
@@ -233,7 +219,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Babe",
                 Poster: "https://m.media-amazon.com/images/M/MV5BYjg4ZjUzMzMtYzlmYi00YTcwLTlkOWUtYWFmY2RhNjliODQzXkEyXkFqcGdeQXVyNTUyMzE4Mzg@._V1_SX300.jpg",
                 Description:
@@ -248,7 +233,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Edward Scissorhands",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMWY2MGRkNjgtZDczNi00YWJjLTkwNmUtMTY0NTE5ZDhkZjgwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
                 Description:
@@ -263,7 +247,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "The Adventures of Tintin",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNDE5MDExNTQ1OF5BMl5BanBnXkFtZTcwMDIxMTM5Ng@@._V1_SX300.jpg",
                 Description:
@@ -285,7 +268,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Life of Pi",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNTg2OTY2ODg5OF5BMl5BanBnXkFtZTcwODM5MTYxOA@@._V1_SX300.jpg",
                 Description:
@@ -296,14 +278,13 @@ const landing = new Vue({
                     + "a shipwrecking. Pi survives in a lifeboat with a zebra, an orangutan, a hyena and a male Bengal tiger nicknamed "
                     + "Richard Parker. They are adrift in the Pacific Ocean, with aggressive hyena and Richard Parker getting hungry. "
                     + "Pi needs to find a way to survive.",
-                CommingSoon: "1",
+                CommingSoon: "0",
                 Reminder: "4",
                 ReleaseDate: "2012",
                 Genre: "Adventure",
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Ice Age",
                 Poster: "https://m.media-amazon.com/images/M/MV5BOGEwMTQyMDktMWUwZC00MzExLTg1MGMtYWJiNWNhMzIyMGU5XkEyXkFqcGdeQXVyOTYyMTY2NzQ@._V1_SX300.jpg",
                 Description:
@@ -318,7 +299,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "The Road to El Dorado",
                 Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
                 Description:
@@ -332,7 +312,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Home Alone",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
                 Description:
@@ -350,7 +329,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Johnny English Strikes Again",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMjI4MjQ3MjI5MV5BMl5BanBnXkFtZTgwNjczMDE4NTM@._V1_SX300.jpg",
                 Description:
@@ -365,7 +343,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Johnny English Reborn",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMjEzODY2MjU1Nl5BMl5BanBnXkFtZTcwMzc1ODUzNg@@._V1_SX300.jpg",
                 Description:
@@ -384,7 +361,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Johnny English",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNDkxODhlNmItYjhiMC00ZjNmLWE2YmMtOTQ3NmQxM2YzOGFiXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
                 Description:
@@ -400,7 +376,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Legally Blonde",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNTEyNjUwMTkxMV5BMl5BanBnXkFtZTcwNjk0NDk0NA@@._V1_SX300.jpg",
                 Description:
@@ -419,7 +394,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Legally Blonde 2: Red, White &amp; Blonde",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTkwNzExMjk0MF5BMl5BanBnXkFtZTcwOTUzNDcyMw@@._V1_SX300.jpg",
                 Description:
@@ -433,7 +407,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Rat Race",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNWEzM2NjMjctM2U3Yi00MGZhLWJlYTYtMWEyYjVjZDEzZjM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
                 Description:
@@ -448,7 +421,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Matilda",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNzRhYmZhOWEtZjA4NC00MTU1LWE1ODgtN2Q5Y2QxN2JlNDljXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
                 Description:
@@ -464,7 +436,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Stuart Little",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMDJlZWZiODItMGE3NC00Yzg3LWFhYTYtZTI2YWNlNjExMDE4XkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_SX300.jpg",
                 Description:
@@ -481,7 +452,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Pitch Perfect",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTcyMTMzNzE5N15BMl5BanBnXkFtZTcwNzg5NjM5Nw@@._V1_SX300.jpg",
                 Description:
@@ -497,7 +467,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Pitch Perfect 2",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMzk4OTM2NzMzNl5BMl5BanBnXkFtZTgwNTAzNDE0NDE@._V1_SX300.jpg",
                 Description:
@@ -515,7 +484,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Cast Away",
                 Poster: "https://m.media-amazon.com/images/M/MV5BN2Y5ZTU4YjctMDRmMC00MTg4LWE1M2MtMjk4MzVmOTE4YjkzXkEyXkFqcGdeQXVyNTc1NTQxODI@._V1_SX300.jpg",
                 Description:
@@ -543,21 +511,19 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "House of Gucci",
                 Poster: "https://m.media-amazon.com/images/M/MV5BYzdlMTMyZWQtZWNmMC00MTJiLWIyMWMtM2ZlZDdlYzZhNTc0XkEyXkFqcGdeQXVyMTMzNDE5NDM2._V1_SX300.jpg",
                 Description:
                     "House of Gucci is inspired by the family empire behind the Italian fashion house of Gucci. When Patrizia Reggiani "
                     + "(Lady Gaga), an outsider from humble beginnings, marries into the Gucci family, her unbridled ambition begins to unravel "
                     + "the family legacy and triggers a reckless spiral of betrayal, decadence, revenge, and ultimately...murder.",
-                CommingSoon: "0",
+                CommingSoon: "1",
                 Reminder: "4",
                 ReleaseDate: "2021",
                 Genre: "Drama",
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Gladiator",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
                 Description:
@@ -573,7 +539,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "The Karate Kid",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNTkzY2YzNmYtY2ViMS00MThiLWFlYTEtOWQ1OTBiOGEwMTdhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
                 Description:
@@ -592,7 +557,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Joker",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
                 Description:
@@ -607,7 +571,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "The Karate Kid",
                 Poster: "https://m.media-amazon.com/images/M/MV5BYjQ1NzRhYjYtMWY3My00ODA0LTk5ZDctYjQ4YjE0M2RhMGNiXkEyXkFqcGdeQXVyNTUyMzE4Mzg@._V1_SX300.jpg",
                 Description:
@@ -624,7 +587,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Bohemian Rhapsody",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTA2NDc3Njg5NDVeQTJeQWpwZ15BbWU4MDc1NDcxNTUz._V1_SX300.jpg",
                 Description:
@@ -642,7 +604,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Forrest Gump",
                 Poster: "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
                 Description:
@@ -659,7 +620,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Black Panther",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
                 Description:
@@ -675,7 +635,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "TRON: Legacy",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTk4NTk4MTk1OF5BMl5BanBnXkFtZTcwNTE2MDIwNA@@._V1_SX300.jpg",
                 Description:
@@ -691,7 +650,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Jurassic Park",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg",
                 Description:
@@ -706,7 +664,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "The Terminator",
                 Poster: "https://m.media-amazon.com/images/M/MV5BYTViNzMxZjEtZGEwNy00MDNiLWIzNGQtZDY2MjQ1OWViZjFmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
                 Description:
@@ -723,7 +680,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "E.T. the Extra-Terrestrial",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTQ2ODFlMDAtNzdhOC00ZDYzLWE3YTMtNDU4ZGFmZmJmYTczXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
                 Description:
@@ -738,7 +694,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "WALL·E",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_SX300.jpg",
                 Description:
@@ -764,7 +719,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "The Maze Runner",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_SX300.jpg",
                 Description:
@@ -782,7 +736,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "Divergent",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTYxMzYwODE4OV5BMl5BanBnXkFtZTgwNDE5MzE2MDE@._V1_SX300.jpg",
                 Description:
@@ -800,7 +753,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
                 Title: "The Divergent Series: Insurgent",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTgxOTYxMTg3OF5BMl5BanBnXkFtZTgwMDgyMzA2NDE@._V1_SX300.jpg",
                 Description:
@@ -815,7 +767,117 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
+                Title: "Death on the Nile",
+                Poster: "https://m.media-amazon.com/images/M/MV5BNjI4ZTQ1OTYtNTI0Yi00M2EyLThiNjMtMzk1MmZlOWMyMDQwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+                Description:
+                    "Belgian sleuth Hercule Poirot's vacation aboard a glamorous river steamer turns into a terrifying search for a murderer when "
+                    + "a picture-perfect couple's idyllic honeymoon is tragically cut short. Set against an epic landscape of sweeping Egyptian "
+                    + "desert vistas and the majestic Giza pyramids, this tale of unbridled passion and incapacitating jealousy features a "
+                    + "cosmopolitan group of impeccably dressed travelers, and enough wicked twists and turns to leave audiences guessing until "
+                    + "the final, shocking denouement.",
+                CommingSoon: "1",
+                Reminder: "4",
+                ReleaseDate: "2022",
+                Genre: "Crime",
+                Actors: "7",
+            },
+            {
+                Title: "The Italian Job",
+                Poster: "https://m.media-amazon.com/images/M/MV5BNDYyNzYxNjYtNmYzMC00MTE0LWIwMmYtNTAyZDBjYTIxMTRhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+                Description:
+                    "Led by John Bridger (Donald Sutherland) and Charlie Croker (Mark Wahlberg) a team is assembled for one last heist to steal $35 "
+                    + "million in gold bars from a heavily guarded safe in Venice, Italy. After successfully pulling off the heist, a team member, "
+                    + "Steve (Edward Norton), driven by greed and jealousy, arranges to take the gold for himself and eliminate the remaining members "
+                    + "of the group. Thinking the team dead, he returns to Los Angeles with the gold. Charlie and the survivors of this betrayal "
+                    + "follow Steve to L.A. to exact revenge against the traitor. Charlie enlists the help of John Bridger's daughter, Stella "
+                    + "(Charlize Theron) - a professional safe cracker - to get revenge. With Stella and the hacking skills of Lyle (Seth Green), "
+                    + "the explosives skills of 'Left Ear' (Yasiin Bey), and the driving skills of 'Handsome' Rob (Jason Statham) this new team "
+                    + "plans and executes a daring heist that weaves through the freeways and subways of L.A.",
+                CommingSoon: "0",
+                Reminder: "4",
+                ReleaseDate: "2003",
+                Genre: "Crime",
+                Actors: "7",
+            },
+            {
+                Title: "Catch Me If You Can",
+                Poster: "https://m.media-amazon.com/images/M/MV5BMTY5MzYzNjc5NV5BMl5BanBnXkFtZTYwNTUyNTc2._V1_SX300.jpg",
+                Description:
+                    "A true story about Frank Abagnale Jr. who, before his 19th birthday, successfully conned millions of dollars worth of checks "
+                    + "as a Pan Am pilot, doctor, and legal prosecutor. An FBI agent makes it his mission to put him behind bars. But Frank not "
+                    + "only eludes capture, he revels in the pursuit.",
+                CommingSoon: "0",
+                Reminder: "4",
+                ReleaseDate: "2002",
+                Genre: "Crime",
+                Actors: "7",
+            },
+            {
+                Title: "The Fast and the Furious: Tokyo Drift",
+                Poster: "https://m.media-amazon.com/images/M/MV5BMTQ2NTMxODEyNV5BMl5BanBnXkFtZTcwMDgxMjA0MQ@@._V1_SX300.jpg",
+                Description:
+                    "An American teenager named Sean Boswell is a loner in school, however he challenges his rival for an illegal street racing, "
+                    + "and he totals his car in the end of the race. To avoid time in prison he is sent to Tokyo to live with his father who is "
+                    + "in the military. As soon as he arrives he discovers a new, fun but dangerous way of street racing in the underworld of the "
+                    + "streets of Tokyo, Japan.",
+                CommingSoon: "0",
+                Reminder: "4",
+                ReleaseDate: "2006",
+                Genre: "Crime",
+                Actors: "7",
+            },
+            {
+                Title: "Skyfall",
+                Poster: "https://m.media-amazon.com/images/M/MV5BMWZiNjE2OWItMTkwNy00ZWQzLWI0NTgtMWE0NjNiYTljN2Q1XkEyXkFqcGdeQXVyNzAwMjYxMzA@._V1_SX300.jpg",
+                Description:
+                    "When James Bond's (Daniel Craig's) latest assignment goes gravely wrong and Agents around the world are exposed, MI6 is "
+                    + "attacked, forcing (M Dame Judi Dench) to relocate the agency. These events cause her authority and position to be challenged "
+                    + "by Gareth Mallory (Ralph Fiennes), the new Chairman of the Intelligence and Security Committee. With MI6 now compromised from "
+                    + "both inside and out, M is left with one ally she can trust: Bond. 007 takes to the shadows, aided only by field agent, Miss "
+                    + "Eve Moneypenny (Naomie Harris), following a trail to the mysterious Tiago Rodriguez, a.k.a. Raoul Silva (Javier Bardem), "
+                    + "whose lethal and hidden motives have yet to reveal themselves.",
+                CommingSoon: "0",
+                Reminder: "4",
+                ReleaseDate: "2012",
+                Genre: "Crime",
+                Actors: "7",
+            },
+            {
+                Title: "Spectre",
+                Poster: "https://m.media-amazon.com/images/M/MV5BOWQ1MDE1NzgtNTQ4OC00ZjliLTllZDAtN2IyOTVmMTc5YjUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                Description:
+                    "A cryptic message from the past sends James Bond (Daniel Craig) on a rogue mission to Mexico City and eventually Rome, where "
+                    + "he meets Lucia Sciarra (Monica Belluci), the beautiful and forbidden widow of an infamous criminal. Bond infiltrates a secret "
+                    + "meeting and uncovers the existence of the sinister organisation known as S.P.E.C.T.R.E. Meanwhile, back in London, "
+                    + "Max Denbigh (Andrew Scott), the new head of the Centre of National Security, questions Bond's actions and challenges the "
+                    + "relevance of MI6, led by M (Ralph Fiennes). Bond covertly enlists Miss Eve Moneypenny (Naomie Harris) and Q (Ben Whishaw) to help him seek out Dr. Madeleine Swann (Léa Seydoux), the daughter of his old nemesis Mr. White (Jesper Christensen), who may "
+                    + "hold the clue to untangling the web of S.P.E.C.T.R.E. As the daughter of the assassin, she understands Bond in a way most "
+                    + "others cannot. As Bond ventures towards the heart of S.P.E.C.T.R.E., he learns a chilling connection between him and the "
+                    + "enemy he seeks.",
+
+                CommingSoon: "0",
+                Reminder: "4",
+                ReleaseDate: "2015",
+                Genre: "Crime",
+                Actors: "7",
+            },
+            {
+                Title: "Casino Royale",
+                Poster: "https://m.media-amazon.com/images/M/MV5BMDI5ZWJhOWItYTlhOC00YWNhLTlkNzctNDU5YTI1M2E1MWZhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
+                Description:
+                    "James Bond (Daniel Craig) goes on his first mission as a 00. Le Chiffre (Mads Mikkelsen) is a banker to the world's terrorists. "
+                    + "He is participating in a poker game at Montenegro, where he must win back his money, in order to stay safe amongst the "
+                    + "terrorist market. The boss of MI6, known simply as 'M' (Dame Judi Dench) sends Bond, along with Vesper Lynd Eva Green) to "
+                    + "attend this game and prevent Le Chiffre from winning. Bond, using help from Felix Leiter (Jeffrey Wright), Rene Mathis "
+                    + "(Giancarlo Giannini), and having Vesper pose as his partner, enters the most important poker game in his already dangerous "
+                    + "career. But if Bond defeats Le Chiffre, will he and Vesper Lynd remain safe?",
+                CommingSoon: "0",
+                Reminder: "4",
+                ReleaseDate: "2006",
+                Genre: "Crime",
+                Actors: "7",
+            },
+            {
                 Title: "The Road to El Dorado",
                 Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
                 Description:
@@ -829,143 +891,119 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
+                Title: "Alice in Wonderland",
+                Poster: "https://m.media-amazon.com/images/M/MV5BMTMwNjAxMTc0Nl5BMl5BanBnXkFtZTcwODc3ODk5Mg@@._V1_SX300.jpg",
                 Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
+                    "Alice, an unpretentious and individual 19-year-old, is betrothed to a dunce of an English nobleman. At her engagement party, " + "she escapes the crowd to consider whether to go through with the marriage and falls down a hole in the garden after spotting "
+                    + "an unusual rabbit. Arriving in a strange and surreal place called 'Underland,' she finds herself in a world that resembles "
+                    + "the nightmares she had as a child, filled with talking animals, villainous queens and knights, and frumious bandersnatches. "
+                    + "Alice realizes that she is there for a reason--to conquer the horrific Jabberwocky and restore the rightful "
+                    + "queen to her throne.",
                 CommingSoon: "0",
                 Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
+                ReleaseDate: "2010",
+                Genre: "Fantasy",
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
+                Title: "Peter Pan",
+                Poster: "https://m.media-amazon.com/images/M/MV5BMTM0ODI2MzA0NV5BMl5BanBnXkFtZTYwNjUzMzg2._V1_SX300.jpg",
                 Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
+                    "In stifling Edwardian London, Wendy Darling mesmerizes her brothers every night with bedtime tales of swordplay, "
+                    + "swashbuckling, and the fearsome Captain Hook. But the children become the heroes of an even greater story, when Peter Pan "
+                    + "flies into their nursery one night and leads them over moonlit rooftops through a galaxy of stars and to the lush jungles of "
+                    + "Neverland. Wendy and her brothers join Peter and the Lost Boys in an exhilarating life--free of grown-up rules--while also "
+                    + "facing the inevitable showdown with Hook and his bloodthirsty pirates.",
                 CommingSoon: "0",
                 Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
+                ReleaseDate: "2003",
+                Genre: "Fantasy",
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
+                Title: "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+                Poster: "https://m.media-amazon.com/images/M/MV5BMTc0NTUwMTU5OV5BMl5BanBnXkFtZTcwNjAwNzQzMw@@._V1_SX300.jpg",
                 Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
+                    "Four children from the same family have to leave their town because of the bombings of WWII. A woman and a professor take the "
+                    + "children to their house. While playing a game of hide-and-seek, the youngest member of the family, Lucy, finds a wardrobe to "
+                    + "hide in. She travels back and back into the wardrobe and finds a place named Narnia. After going in twice, the four children "
+                    + "go in together for the last time. They battle wolves, meet talking animals, encounter an evil white witch and meet a "
+                    + "magnificent lion named Aslan. Will this be the end of their journey to Narnia or will they stay?",
                 CommingSoon: "0",
                 Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
+                ReleaseDate: "2005",
+                Genre: "Fantasy",
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
+                Title: "King Kong Lives",
+                Poster: "https://m.media-amazon.com/images/M/MV5BNzAxNTQyMzYtMTg5Zi00OTA1LWEwYjEtNjg3ZmJhOWZiMzk3XkEyXkFqcGdeQXVyMTQ2MjQyNDc@._V1_SX300.jpg",
                 Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
+                    "A giant ape King Kong, which was shot and fell off the World Trade Center tower, appears to be alive, but is in coma for 10 "
+                    + "years and desperately needs a blood transfusion in order to have an artificial heart implanted. Suddenly, in the rainforest, "
+                    + "another gigantic ape is found - this time a female. She is brought to the USA, and the heart is successfully implanted. But "
+                    + "then King Kong, having sensed the female ape, breaks loose.",
                 CommingSoon: "0",
                 Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
+                ReleaseDate: "1986",
+                Genre: "Fantasy",
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
+                Title: "Jumanji: The Next Level",
+                Poster: "https://m.media-amazon.com/images/M/MV5BOTVjMmFiMDUtOWQ4My00YzhmLWE3MzEtODM1NDFjMWEwZTRkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
                 Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
+                    "The gang is back but the game has changed. As they return to Jumanji to rescue one of their own, they discover that nothing is "
+                    + "as they expect. The players will have to brave parts unknown and unexplored, from the arid deserts to the snowy mountains, in "
+                    + "order to escape the world's most dangerous game.",
                 CommingSoon: "0",
                 Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
+                ReleaseDate: "2019",
+                Genre: "Fantasy",
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
+                Title: "Prince of Persia: The Sands of Time",
+                Poster: "https://m.media-amazon.com/images/M/MV5BMTMwNDg0NzcyMV5BMl5BanBnXkFtZTcwNjg4MjQyMw@@._V1_SX300.jpg",
                 Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
+                    "Set in the mystical lands of Persia, a rogue prince and a mysterious princess race against dark forces to safeguard an ancient " + "dagger capable of releasing the Sands of Time -- a gift from the gods that can reverse time and allow its possessor to rule "
+                    + "the world.",
                 CommingSoon: "0",
                 Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
+                ReleaseDate: "2010",
+                Genre: "Fantasy",
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
+                Title: "Spider-Man: Homecoming",
+                Poster: "https://m.media-amazon.com/images/M/MV5BNTk4ODQ1MzgzNl5BMl5BanBnXkFtZTgwMTMyMzM4MTI@._V1_SX300.jpg",
                 Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
+                    "A young Peter Parker/Spider-Man begins to navigate his newfound identity as the web-slinging super hero Spider-Man. "
+                    + "Thrilled by his experience with the Avengers, Peter returns home, where he lives with his Aunt May, under the watchful eye "
+                    + "of his new mentor Tony Stark. Peter tries to fall back into his normal daily routine - distracted by thoughts of proving "
+                    + "himself to be more than just your friendly neighborhood Spider-Man - but when the Vulture emerges as a new villain, "
+                    + "everything that Peter holds most important will be threatened.",
                 CommingSoon: "0",
                 Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
+                ReleaseDate: "2017",
+                Genre: "Adventure",
                 Actors: "7",
             },
             {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
+                Title: "Indiana Jones and the Kingdom of the Crystal Skull",
+                Poster: "https://m.media-amazon.com/images/M/MV5BZDIzNzM5MDUtZmI5MC00NGQ5LWFlNzEtYzE3ODIxNDI3ZmNhXkEyXkFqcGdeQXVyNjQ4ODE4MzQ@._V1_SX300.jpg",
                 Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
+                    "During the Cold War, Soviet Agents watch Professor Henry 'Indiana' Jones, Jr. (Harrison Ford), when a young man brings him a "
+                    + "coded message from an aged, demented colleague, Professor Harold Oxley (Sir John Hurt). Led by the brilliant Irina Spalko "
+                    + "(Cate Blanchett), the Soviets tail Jones and the young man, Mutt Williams (Shia LeBeouf), to Peru. With Oxley's code, they "
+                    + "find a legendary skull made of a single piece of quartz. If Jones can deliver the skull to its rightful place, all may be "
+                    + "well. But if Irina takes it to its origin, she'll gain powers that could endanger the West. Aging professor and young buck "
+                    + "join forces with a woman from Jones' past, Marion Ravenwood (Karen Allen), to face the dangers of the jungle, "
+                    + "Russia, and the supernatural.",
                 CommingSoon: "0",
                 Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
-                Actors: "7",
-            },
-            {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
-                Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
-                CommingSoon: "0",
-                Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
-                Actors: "7",
-            },
-            {
-                // id : '#' + Math.floor(Math.random() * 9000) + 1000,
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
-                Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
-                CommingSoon: "0",
-                Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
+                ReleaseDate: "2008",
+                Genre: "Adventure",
                 Actors: "7",
             },
         ],
@@ -997,7 +1035,7 @@ const landing = new Vue({
                 return movie.Genre.toLowerCase().includes("Fantasy".toLowerCase());
             })
             let orderedMovies = filteredMoviesFantasy.sort((a, b) => {
-                return a.ReleaseDate - b.ReleaseDate;
+                return b.ReleaseDate - a.ReleaseDate;
             })
             return orderedMovies;
         },
@@ -1017,7 +1055,7 @@ const landing = new Vue({
                 return movie.Genre.toLowerCase().includes("Crime".toLowerCase());
             })
             let orderedMovies = filteredMoviesCrime.sort((a, b) => {
-                return a.ReleaseDate - b.ReleaseDate;
+                return b.ReleaseDate - a.ReleaseDate;
             })
             return orderedMovies;
         },
@@ -1057,7 +1095,7 @@ const landing = new Vue({
                 return movie.Genre.toLowerCase().includes("Adventure".toLowerCase());
             })
             let orderedMovies = filteredMoviesAdventure.sort((a, b) => {
-                return a.ReleaseDate - b.ReleaseDate;
+                return b.ReleaseDate - a.ReleaseDate;
             })
             return orderedMovies;
         }
