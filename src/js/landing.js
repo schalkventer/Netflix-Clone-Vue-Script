@@ -397,9 +397,8 @@ const landing = new Vue({
                 Title: "Legally Blonde 2: Red, White &amp; Blonde",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTkwNzExMjk0MF5BMl5BanBnXkFtZTcwOTUzNDcyMw@@._V1_SX300.jpg",
                 Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
+                    "Sassy postgrad Elle Woods (Reese Witherspoon) is all about animal rights. In fact, she puts her nuptial plans on hold to head "
+                    + "to Washington, D.C. to get an anti-animal testing bill passed. Her building's doorman quickly shows her the ways and workings" + "of our nation's capital.",
                 CommingSoon: "0",
                 Reminder: "4",
                 ReleaseDate: "2003",
@@ -878,19 +877,6 @@ const landing = new Vue({
                 Actors: "7",
             },
             {
-                Title: "The Road to El Dorado",
-                Poster: "https://m.media-amazon.com/images/M/MV5BOTEzNWIwMzctOTE1YS00YjIyLTgwZGEtMTMxZDAzNzlmODMxXkEyXkFqcGdeQXVyMjgyMDk1MzY@._V1_SX300.jpg",
-                Description:
-                    "The story is about two swindlers who get their hands on a map to the fabled city of gold, El Dorado, while pulling off some "
-                    + "sort of scam. Their plan goes bad and the rogues end up lost at sea after several misfortunes. Oddly enough, they end up "
-                    + "on the shores of El Dorado, and are worshipped by the natives for their foreign appearances.",
-                CommingSoon: "0",
-                Reminder: "4",
-                ReleaseDate: "2000",
-                Genre: "Family",
-                Actors: "7",
-            },
-            {
                 Title: "Alice in Wonderland",
                 Poster: "https://m.media-amazon.com/images/M/MV5BMTMwNjAxMTc0Nl5BMl5BanBnXkFtZTcwODc3ODk5Mg@@._V1_SX300.jpg",
                 Description:
@@ -1108,45 +1094,6 @@ const landing = new Vue({
 
         theSearch() {
             this.searched = !this.searched;
-            for (let i = 0; i < 11; i++) {
-                switch (this.searchInput.searchText) {
-
-                    case this.movies[i].Title:
-                        alert("1");
-                        break;
-
-                    case this.movies[i].Poster:
-                        alert("2");
-                        break;
-
-                    case this.movies[i].Description:
-                        alert("3");
-                        break;
-
-                    case this.movies[i].CommingSoon:
-                        alert("4");
-                        break;
-
-                    case this.movies[i].Reminder:
-                        alert("5");
-                        break;
-
-                    case this.movies[i].ReleaseDate:
-                        alert("6");
-                        break;
-
-                    case this.movies[i].Genre:
-                        alert("7");
-                        break;
-
-                    case this.movies[i].Actors:
-                        alert("8");
-                        break;
-
-                    default:
-                        ;
-                }
-            }
         },
 
         addToWatchList() {

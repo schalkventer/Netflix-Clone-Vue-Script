@@ -50,10 +50,10 @@
             </div>
 
             <div>
-                <form id="register-driver-form" class="search-box">
-                    <input v-model="searchInput.searchText" type="text" placeholder="What are you looking for?"
-                        required>
-                    <input type="button" value="Search" v-on:click="theSearch" />
+                <form class="search-box">
+                    <input id="searchText" v-model="searchInput.searchText" type="text"
+                        placeholder="What are you looking for?" required>
+                    <input id="searchButton" type="button" value="Search" v-on:click="theSearch" />
                 </form>
             </div>
 
@@ -113,23 +113,6 @@
             </div>
         </div>
 
-        <!-- Adventure -->
-        <div class="row">
-            <h2>Adventure</h2>
-            <div class="movies-list row__posters">
-                <div v-for="wMovie in filteredMoviesAdventure" class="movie row__poster">
-                    <div class="product-image">
-                        <img :src="wMovie.Poster" alt="Movie Poster">
-                    </div>
-                    <div class="detail">
-                        <p class="year">{{wMovie.ReleaseDate}}</p>
-                        <h3>{{ wMovie.Title }}</h3>
-                        <button v-on:click="addToWatchList">Add</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Crime -->
         <div class="row">
             <h2>Crime</h2>
@@ -147,11 +130,11 @@
             </div>
         </div>
 
-        <!-- Drama -->
+        <!-- Adventure -->
         <div class="row">
-            <h2>Drama</h2>
+            <h2>Adventure</h2>
             <div class="movies-list row__posters">
-                <div v-for="wMovie in filteredMoviesDrama" class="movie row__poster">
+                <div v-for="wMovie in filteredMoviesAdventure" class="movie row__poster">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
                     </div>
@@ -169,6 +152,23 @@
             <h2>Fantasy</h2>
             <div class="movies-list row__posters">
                 <div v-for="wMovie in filteredMoviesFantasy" class="movie row__poster">
+                    <div class="product-image">
+                        <img :src="wMovie.Poster" alt="Movie Poster">
+                    </div>
+                    <div class="detail">
+                        <p class="year">{{wMovie.ReleaseDate}}</p>
+                        <h3>{{ wMovie.Title }}</h3>
+                        <button v-on:click="addToWatchList">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drama -->
+        <div class="row">
+            <h2>Drama</h2>
+            <div class="movies-list row__posters">
+                <div v-for="wMovie in filteredMoviesDrama" class="movie row__poster">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
                     </div>

@@ -46,10 +46,20 @@ a::selection {
 
 .home .search-box {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 16px;
+}
+
+.home .search-box #searchText {
+    margin-left: 15vw;
+    margin-right: 1vw;
+}
+
+.home .search-box #searchButton {
+    margin-right: 15vw;
+    vertical-align: middle;
+    width: 10vw;
 }
 
 .home .search-box input {
@@ -239,12 +249,12 @@ body {
 }
 
 .banner {
-    background-image: url('/src/images/Cruella2.jpg');
+    background-image: url('/src/images/Cruella3.jpg');
     background-size: cover;
     background-position: center center;
     color: white;
     object-fit: contain;
-    height: 570px;
+    height: 490px;
 }
 
 .banner__contents {
@@ -254,7 +264,7 @@ body {
 }
 
 .banner__title {
-    font-size: 7vw;
+    font-size: 5vw;
     font-weight: 800;
     padding-top: 3vw;
     padding-bottom: 2vw;
@@ -294,7 +304,7 @@ body {
 }
 
 .banner__fadeBottom {
-    margin-top: 267px;
+    margin-top: 197px;
     height: 7.4rem;
     background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111);
 }
