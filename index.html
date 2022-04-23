@@ -17,12 +17,7 @@
         <header>
             <div class="nav" id="nav">
                 <img src="/src/images/netflix-logo.png" alt="" class="nav__logo" />
-                <a href="src/pages/MovieDetail.html">
-                    <button class="nav__watchList">
-                        Watchlist
-                    </button>
-                    <img src="/src/images/netflix-avatar.png" alt="" class="nav__avatar" />
-                </a>
+                <img src="/src/images/netflix-avatar.png" alt="" class="nav__avatar" />
             </div>
         </header>
 
@@ -31,20 +26,24 @@
                 <!-- header -->
                 <div class="banner">
                     <div class="banner__contents">
-                        <h3 class="banner__title">Money Heist</h3>
+                        <h1 class="banner__title">Cruella</h1>
                         <div class="banner__buttons">
 
                             <button class="banner__button">Play</button>
+                            <a href="src/pages/MovieDetail.html">
+                                <button class="banner__button">
+                                    My List
+                                </button>
+                            </a>
 
-                            <button class="banner__button">My List</button>
                         </div>
                         <th style="direction: ltr; padding-top:2em;text-align: center; padding-right:0"
                             class="col-lg-4 col-md-6">
-                            <p class="banner__description">
+                            <h3 class="banner__description">
                                 To carry out the biggest heist in history, a mysterious man called
                                 The Professor recruits a band of eight robbers who have a single
                                 characteristic: n...
-                            </p>
+                            </h3>
                     </div>
                     <div class="banner__fadeBottom"></div>
                 </div>
@@ -64,7 +63,7 @@
 
             <!-- form to create drivers -->
             <div v-show="searched" class="movies-list">
-                <div v-for="wMovie in movies" class="movie row__poster">
+                <div v-for="wMovie in filteredMoviesTitle" class="movie row__poster">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
                         <div class="type">{{ wMovie.Genre }}</div>
@@ -83,7 +82,7 @@
         <div class="row">
             <h2>COMING SOON</h2>
             <div class="movies-list row__posters">
-                <div v-for="wMovie in movies" class="movie row__poster row__posterLarge">
+                <div v-for="wMovie in filteredMoviesCommingSoon" class="movie row__poster row__posterLarge">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
                         <div class="type">{{ wMovie.Genre }}</div>
@@ -97,14 +96,13 @@
             </div>
         </div>
 
-        <!-- Trending Now -->
+        <!-- Sci-fi -->
         <div class="row">
-            <h2>Trending Now</h2>
+            <h2>Sci-fi</h2>
             <div class="movies-list row__posters">
-                <div v-for="wMovie in movies" class="movie row__poster">
+                <div v-for="wMovie in filteredMoviesScifi" class="movie row__poster">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
-                        <div class="type">{{ wMovie.Genre }}</div>
                     </div>
                     <div class="detail">
                         <p class="year">{{wMovie.ReleaseDate}}</p>
@@ -115,14 +113,13 @@
             </div>
         </div>
 
-        <!-- Top Rated -->
+        <!-- Adventure -->
         <div class="row">
-            <h2>Top Rated</h2>
+            <h2>Adventure</h2>
             <div class="movies-list row__posters">
-                <div v-for="wMovie in movies" class="movie row__poster">
+                <div v-for="wMovie in filteredMoviesAdventure" class="movie row__poster">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
-                        <div class="type">{{ wMovie.Genre }}</div>
                     </div>
                     <div class="detail">
                         <p class="year">{{wMovie.ReleaseDate}}</p>
@@ -133,14 +130,13 @@
             </div>
         </div>
 
-        <!-- Action Movies -->
+        <!-- Crime -->
         <div class="row">
-            <h2>Action Movies</h2>
+            <h2>Crime</h2>
             <div class="movies-list row__posters">
-                <div v-for="wMovie in movies" class="movie row__poster">
+                <div v-for="wMovie in filteredMoviesCrime" class="movie row__poster">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
-                        <div class="type">{{ wMovie.Genre }}</div>
                     </div>
                     <div class="detail">
                         <p class="year">{{wMovie.ReleaseDate}}</p>
@@ -151,14 +147,13 @@
             </div>
         </div>
 
-        <!-- Comedy Movies -->
+        <!-- Drama -->
         <div class="row">
-            <h2>Comedy Movies</h2>
+            <h2>Drama</h2>
             <div class="movies-list row__posters">
-                <div v-for="wMovie in movies" class="movie row__poster">
+                <div v-for="wMovie in filteredMoviesDrama" class="movie row__poster">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
-                        <div class="type">{{ wMovie.Genre }}</div>
                     </div>
                     <div class="detail">
                         <p class="year">{{wMovie.ReleaseDate}}</p>
@@ -169,14 +164,13 @@
             </div>
         </div>
 
-        <!-- Horror Movies -->
+        <!-- Fantasy -->
         <div class="row">
-            <h2>Horror Movies</h2>
+            <h2>Fantasy</h2>
             <div class="movies-list row__posters">
-                <div v-for="wMovie in movies" class="movie row__poster">
+                <div v-for="wMovie in filteredMoviesFantasy" class="movie row__poster">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
-                        <div class="type">{{ wMovie.Genre }}</div>
                     </div>
                     <div class="detail">
                         <p class="year">{{wMovie.ReleaseDate}}</p>
@@ -187,14 +181,13 @@
             </div>
         </div>
 
-        <!-- Romance Movies -->
+        <!-- Family -->
         <div class="row">
-            <h2>Romance Movies</h2>
+            <h2>Family</h2>
             <div class="movies-list row__posters">
-                <div v-for="wMovie in movies" class="movie row__poster">
+                <div v-for="wMovie in filteredMoviesFamily" class="movie row__poster">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
-                        <div class="type">{{ wMovie.Genre }}</div>
                     </div>
                     <div class="detail">
                         <p class="year">{{wMovie.ReleaseDate}}</p>
@@ -205,14 +198,13 @@
             </div>
         </div>
 
-        <!-- Documentaries -->
+        <!-- Comedy -->
         <div class="row">
-            <h2>Documentaries</h2>
+            <h2>Comedy</h2>
             <div class="movies-list row__posters">
-                <div v-for="wMovie in movies" class="movie row__poster">
+                <div v-for="wMovie in filteredMoviesComedy" class="movie row__poster">
                     <div class="product-image">
                         <img :src="wMovie.Poster" alt="Movie Poster">
-                        <div class="type">{{ wMovie.Genre }}</div>
                     </div>
                     <div class="detail">
                         <p class="year">{{wMovie.ReleaseDate}}</p>
