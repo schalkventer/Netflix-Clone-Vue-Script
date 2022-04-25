@@ -996,6 +996,8 @@ const landing = new Vue({
     },
 
     computed: {
+
+
         filteredMoviesTitle() {
             let filteredMoviesTitle = this.movies.filter((movie) => {
                 return movie.Title.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
