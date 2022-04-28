@@ -1000,7 +1000,7 @@ const landing = new Vue({
 
         filteredMoviesTitle() {
 
-            return this.filteredMoviesFunction;
+            return filteredMoviesFunction();
         },
 
         filteredMoviesCommingSoon() {
