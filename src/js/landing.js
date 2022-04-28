@@ -996,11 +996,8 @@ const landing = new Vue({
     },
 
     computed: {
-
-
         filteredMoviesTitle() {
-
-            return filteredMoviesFunction();
+            return this.filteredMoviesFunction();
         },
 
         filteredMoviesCommingSoon() {
@@ -1117,7 +1114,7 @@ const landing = new Vue({
         }
     },
 
-    filteredMoviesFunction() {
+filteredMoviesFunction() {
         alert("Hier!");
         let filteredMoviesTitle = this.movies.filter((movie) => {
             return movie.Title.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
@@ -1168,5 +1165,4 @@ const landing = new Vue({
 
         return orderedMovies;
     }
-
 })
