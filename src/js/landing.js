@@ -1111,58 +1111,59 @@ const landing = new Vue({
                 localStorage.setItem("vrl-app-key", JSON.stringify(watchList))
                 console.log(localStorage.getItem('vrl-app-key'))
             }
-        }
-    },
-
-filteredMoviesFunction() {
-        alert("Hier!");
-        let filteredMoviesTitle = this.movies.filter((movie) => {
-            return movie.Title.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
-        })
-        let filteredMovies = filteredMoviesTitle;
-
-        let filteredMoviesGenre = this.movies.filter((movie) => {
-            return movie.Genre.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
-        })
-
-        let filteredMoviesReleaseDate = this.movies.filter((movie) => {
-            return movie.ReleaseDate.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
-        })
-
-        let filteredMoviesCommingSoon = this.movies.filter((movie) => {
-            return movie.CommingSoon.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
-        })
+        },
 
 
-        for (let i = 0; i < filteredMovies.length; i++) {
-            for (let j = 0; j < filteredMoviesReleaseDate.length; j++) {
-                if (filteredMovies[i] !== filteredMoviesReleaseDate[j]) {
-                    filteredMovies.push(filteredMoviesReleaseDate[j]);
+        filteredMoviesFunction() {
+            alert("Hier!");
+            let filteredMoviesTitle = this.movies.filter((movie) => {
+                return movie.Title.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
+            })
+            let filteredMovies = filteredMoviesTitle;
+
+            let filteredMoviesGenre = this.movies.filter((movie) => {
+                return movie.Genre.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
+            })
+
+            let filteredMoviesReleaseDate = this.movies.filter((movie) => {
+                return movie.ReleaseDate.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
+            })
+
+            let filteredMoviesCommingSoon = this.movies.filter((movie) => {
+                return movie.CommingSoon.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
+            })
+
+
+            for (let i = 0; i < filteredMovies.length; i++) {
+                for (let j = 0; j < filteredMoviesReleaseDate.length; j++) {
+                    if (filteredMovies[i] !== filteredMoviesReleaseDate[j]) {
+                        filteredMovies.push(filteredMoviesReleaseDate[j]);
+                    }
                 }
             }
-        }
 
-        for (let i = 0; i < filteredMovies.length; i++) {
-            for (let j = 0; j < filteredMoviesCommingSoon.length; j++) {
-                if (filteredMovies[i] !== filteredMoviesCommingSoon[j]) {
-                    filteredMovies.push(filteredMoviesCommingSoon[j]);
+            for (let i = 0; i < filteredMovies.length; i++) {
+                for (let j = 0; j < filteredMoviesCommingSoon.length; j++) {
+                    if (filteredMovies[i] !== filteredMoviesCommingSoon[j]) {
+                        filteredMovies.push(filteredMoviesCommingSoon[j]);
+                    }
                 }
             }
-        }
 
-        for (let i = 0; i < filteredMovies.length; i++) {
-            for (let j = 0; j < filteredMoviesGenre.length; j++) {
-                if (filteredMovies[i] !== filteredMoviesGenre[j]) {
-                    filteredMovies.push(filteredMoviesGenre[j]);
+            for (let i = 0; i < filteredMovies.length; i++) {
+                for (let j = 0; j < filteredMoviesGenre.length; j++) {
+                    if (filteredMovies[i] !== filteredMoviesGenre[j]) {
+                        filteredMovies.push(filteredMoviesGenre[j]);
+                    }
                 }
             }
+
+
+            let orderedMovies = filteredMovies.sort((a, b) => {
+                return b.ReleaseDate - a.ReleaseDate;
+            })
+
+            return orderedMovies;
         }
-
-
-        let orderedMovies = filteredMovies.sort((a, b) => {
-            return b.ReleaseDate - a.ReleaseDate;
-        })
-
-        return orderedMovies;
     }
 })
